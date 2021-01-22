@@ -1,0 +1,45 @@
+# OSI 七层模型
+# TCPIP互联网协群
+# TCP协议
+# IPv4协议
+# IPv6协议
+# UDP协议
+# TCP,UDP,IP抓包Whireshark工具
+# socket编程,BIO,NIO,Netty
+# HTTP协议
+## IP domain DNS
+客户端-->路由(网关)-->运营商-->权威DNS-->com一级DNS-->root顶级根DNS-->com一级-->权威DNS-->运营商-->服务
+TTL time to live存活时间(128跳)
+### DNS 记录方式 三十多种 Name Server Record
+  1. 定义主机IPv4地址
+  www.example.com. IN A 139.xx.xx.x;
+  2. 定义主机IPv6地址
+  123415259.s2txipv6.cdntip.com. 103 IN AAAA 240e:940:401:1:1a::
+  3. 定义域名的别名 CNAME (再次发送到别名域名上)
+  www.example.com. IN CNAME example.com.
+  a.example.com. IN CNAME b.example.com.
+  www.foo.com IN  CNAME example.com.
+  4. 定义邮件服务器所在位置
+  happy.example.com 作为邮件服务器域名 IN MAX happy.example.com.
+  A记录描述邮件服务器IP happy.example.com. IN A 123.123.123.123
+  5. 定义DNS信息服务器的位置
+  zhihu.com 52908 IN  NS  ns4.dnsv5.com
+  zhihu.com 52908 IN  NS  ns3.dnsv5.com
+  6. SOA记录 Start of Authority Record #高可用 定义 多个ns服务器中 那个是主服务器
+  IN SOA  ns3.dnsv5.com. #主服务器
+  IN SOA  ns3.dnsv5.com.enterprise3dnsadmin.dnspod.com.
+  IN SOA  1594728197 3600 180 1209600 180
+  7. TXT记录;用于对接别人系统,例如 微信,它有标准说,你在你服务器中 提供一个TXT文本,写入什么什么信息,当请求过来,验证有没有是否符合标准来检测这个服务器是不是你的,你不写说明你不管理这个服务器
+  #其实就是定义一个字符串而已
+  zhihu.com 600 IN  TXT "google-site-verification=q42xxxxxx"
+  
+  zhihu.com 600 IN TXT  "m5xxxxxx"
+  
+  内容分发网络CDN content delivery network 将请求分散到世界各地,分发流量,加快访问速度
+  
+  
+  
+  
+  zhihu.com 600 IN TXT  "v=spf1 incxxxx"
+  
+  
